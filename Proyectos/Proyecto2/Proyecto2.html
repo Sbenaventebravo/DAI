@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <!-- Include external CSS. -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.css">
+
+    <!-- Include Editor style. -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1/css/froala_style.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Include external JS libs. -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/xml/xml.min.js"></script>
+
+    <!-- Include Editor JS files. -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1//js/froala_editor.pkgd.min.js"></script>
+
+
+
+
+
+  <script>
+  $( function() {
+    $( "#tabs" ).tabs();
+
+    $("#checkuno").click(function(){
+	 	if($("#checkuno").is(':checked')) {  
+            $("#notauno").removeAttr('disabled');
+            $("#msjexito").hide()
+        } else {    
+            $("#notauno").prop( "disabled", true );
+            $("#msjexito").hide()  
+        }  
+    });
+     $("#checkdos").click(function(){
+	 	if($("#checkdos").is(':checked')) {  
+            $("#notados").removeAttr('disabled');
+            $("#msjexito").hide()
+        } else {    
+            $("#notados").prop( "disabled", true );
+            $("#msjexito").hide()  
+        }  
+    });
+      $("#checktres").click(function(){
+	 	if($("#checktres").is(':checked')) {  
+            $("#notatres").removeAttr('disabled');
+            $("#msjexito").hide()
+        } else {    
+            $("#notatres").prop( "disabled", true );
+            $("#msjexito").hide()  
+        }  
+    });
+       $("#checkcuatro").click(function(){
+	 	if($("#checkcuatro").is(':checked')) {  
+            $("#notacuatro").removeAttr('disabled');
+            $("#msjexito").hide()
+        } else {    
+            $("#notacuatro").prop( "disabled", true );
+            $("#msjexito").hide()  
+        }  
+    });
+        $("#checkcinco").click(function(){
+	 	if($("#checkcinco").is(':checked')) {  
+            $("#notacinco").removeAttr('disabled');
+            $("#msjexito").hide()
+        } else {    
+            $("#notacinco").prop( "disabled", true );
+            $("#msjexito").hide()  
+        }  
+    });
+         $("#checkseis").click(function(){
+	 	if($("#checkseis").is(':checked')) {  
+            $("#notaseis").removeAttr('disabled');
+            $("#msjexito").hide()
+        } else {    
+            $("#notaseis").prop( "disabled", true );
+            $("#msjexito").hide()  
+        }  
+    });
+    $("#notauno").change(function(){
+    	$("#textoexito").text("Exito!! La nota ha sido agregada con exito!");
+    	$("#msjexito").show();
+    });
+    $("#notados").change(function(){
+    	$("#textoexito").text("Exito!! La nota ha sido agregada con exito!");
+    	$("#msjexito").show();
+    });
+    $("#notatres").change(function(){
+    	$("#textoexito").text("Exito!! La nota ha sido agregada con exito!");
+    	$("#msjexito").show();
+    });
+    $("#notacuatro").change(function(){
+    	$("#textoexito").text("Exito!! La nota ha sido agregada con exito!");
+    	$("#msjexito").show();
+    });
+    $("#notacinco").change(function(){
+    	$("#textoexito").text("Exito!! La nota ha sido agregada con exito!");
+    	$("#msjexito").show();
+    });
+    $("#notaseis").change(function(){
+    	$("#textoexito").text("Exito!! La nota ha sido agregada con exito!");
+    	$("#msjexito").show();
+    });
+    $("#agregarhabilidad").click(function(){
+    	var nuevas_habilidad ="<div class='row'><div class='col-md-5'><input type='text' class='form-control'></div><div class='col-md-5'><input type='range' name='nivel' min='0' max='10' value='0'></div><div class='col-md-2'></div></div>";
+    	$("#habilidades").append(nuevas_habilidad);
+
+    });
+    $('textarea').froalaEditor();
+
+    $("#enviodatos").click(function(){
+    	$("#textoexito").text("Exito!! los datos han sido enviados!");
+    	$("#msjexito").show();
+
+    });
+  } );	
+  </script>
+  <style>
+  	.row
+  	{
+  		margin-top: 1%;
+  		margin-bottom: 1%;
+  	}
+  </style>
+</head>
+<body>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2">
+			</div>
+			<div class="col-md-8">
+				<div class="alert alert-success" hidden="true" id="msjexito">
+				  	<p id="textoexito"><strong>Exito!</strong> La nota ha sido agregada.</p>
+				</div>
+				
+			</div>
+			<div class="col-md-2">	
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2">
+			</div>
+			<div class= "col-md-8">
+				<div id="tabs">
+					<ul>
+						<li><a href="#tabs-2">Notas</a></li>
+						<li><a href="#tabs-3">Conocimientos</a></li>
+						<li><a href="#tabs-4">Experiencia</a></li>
+					</ul>
+					<div id="tabs-2">
+						<div class="row">
+							<div class="col-md-1">
+								<div class="form-check">
+									<input type="checkbox" class="form-check-input" id="checkuno">
+								</div>
+							</div>
+							<div class="col-md-2">
+								<label for="checkuno">PDA1101</label>
+							</div>
+							<div class="col-md-1">
+								<label for="notauno">Nota:</label>
+							</div>
+							<div class="col-md-3">
+								<input type="text" class="form-control" id="notauno" disabled="disabled">
+							</div>
+							<div class="col-md-5">
+								
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-1">
+								<div class="form-check">
+									<input type="checkbox" class="form-check-input" id="checkdos">
+								</div>
+							</div>
+							<div class="col-md-2">
+								<label for="checkdos">POO1501</label>
+							</div>
+							<div class="col-md-1">
+								<label for="notados">Nota:</label>
+							</div>
+							<div class="col-md-3">
+								<input type="text" class="form-control" id="notados" disabled="disabled">
+							</div>
+							<div class="col-md-5">
+								
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-1">
+								<div class="form-check">
+									<input type="checkbox" class="form-check-input" id="checktres">
+								</div>
+							</div>
+							<div class="col-md-2">
+								<label for="checktres">DEJ5401</label>
+							</div>
+							<div class="col-md-1">
+								<label for="notatres">Nota:</label>
+							</div>
+							<div class="col-md-3">
+								<input type="text" class="form-control" id="notatres" disabled="disabled">
+							</div>
+							<div class="col-md-5">
+								
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-1">
+								<div class="form-check">
+									<input type="checkbox" class="form-check-input" id="checkcuatro">
+								</div>
+							</div>
+							<div class="col-md-2">
+								<label for="checkcuatro">DEN4501</label>
+							</div>
+							<div class="col-md-1">
+								<label for="notacuatro">Nota:</label>
+							</div>
+							<div class="col-md-3">
+								<input type="text" class="form-control" id="notacuatro" disabled="disabled">
+							</div>
+							<div class="col-md-5">
+								
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-1">
+								<div class="form-check">
+									<input type="checkbox" class="form-check-input" id="checkcinco">
+								</div>
+							</div>
+							<div class="col-md-2">
+								<label for="checkcinco">DEJ4502</label>
+							</div>
+							<div class="col-md-1">
+								<label for="notacinco">Nota:</label>
+							</div>
+							<div class="col-md-3">
+								<input type="text" class="form-control" id="notacinco" disabled="disabled">
+							</div>
+							<div class="col-md-5">
+								
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-1">
+								<div class="form-check">
+									<input type="checkbox" class="form-check-input" id="checkseis">
+								</div>
+							</div>
+							<div class="col-md-2">
+								<label for="checkseis">DEN4502</label>
+							</div>
+							<div class="col-md-1">
+								<label for="notaseis">Nota:</label>
+							</div>
+							<div class="col-md-3">
+								<input type="text" class="form-control" id="notaseis" disabled="disabled">
+							</div>
+							<div class="col-md-5">
+								
+							</div>
+						</div>
+					</div>
+					<div id="tabs-3">
+						<div class="row">					
+							<div class="col-md-5 ">
+								<h3>Conocimiento</h3>
+							</div>
+							<div class="col-md-5">
+								<h3>Nivel</h3>
+							</div>
+							<div class="col-md-2">
+							</div>
+						</div>
+						<div id="habilidades">
+						</div>
+						<div class="row">					
+							<div class="col-md-10">
+								
+							</div>
+							<div class="col-md-2">
+								<button class="btn btn-primary btn-block" id="agregarhabilidad">+</button>
+							</div>
+						</div>
+					</div>
+					<div id="tabs-4">
+						<div class="row">
+							<div class="col-md-12">
+								<h3>Cuentanos mas de ti:</h3>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<textarea rows="10"></textarea>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-8">
+								
+							</div>
+							<div class="col-md-4">
+								<button type="submit" class="btn btn-primary" id="enviodatos">Enviar Antecendetes</button>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</div>
+			<div class="col-md-2">
+			</div>
+		</div>
+	</div>
+		
+</body>
+</html>
